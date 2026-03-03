@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>URL Not Found</title>
+    <link rel="stylesheet" href="/home.css">
 </head>
 
 <body>
-    <% if (!locals.foundId) { %>
-        <h2>This url is not even generated </h2>
-
-        <% } %>
+    <div class="container center-screen">
+        <div class="card error-card">
+            <% if (!locals.foundId) { %>
+                <h2>❌ Short URL Not Found</h2>
+                <p>This short ID does not exist in the database.</p>
+                <a href="/" class="back-btn">Go Back</a>
+            <% } %>
+        </div>
+    </div>
 </body>
-
 </html>

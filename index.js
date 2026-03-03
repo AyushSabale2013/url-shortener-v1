@@ -23,6 +23,7 @@ app.set("views", path.resolve("./views")); //tells where is view
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended : true})); // for pasring url data
+app.use(express.static("public"));
 
 
 
