@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+
+    <h1>URL SHORTENER</h1>
+
+    <% if (locals.id) { %>
+        <p>Short URL ID: <%= id %>
+        </p>
+        <% } %>
+
+            <form method="POST" action="/url">
+                <label>Enter valid URL to shorten</label>
+                <input type="text" name="url" placeholder="Enter URL" required>
+                <button type="submit"> Generate </button>
+            </form>
+            <% if (locals.idExists) { %>
+                <p> Short Id of this url is already exists and it is : <%= shortId %>
+                </p>
+                <% } %>
+
+                    <form method="GET" action="/url">
+                        <label>Enter shorten url to redirect</label>
+                        <input type="text" name="shortId" placeholder="Enter short url" required>
+                        <button type="submit"> Redirect </button>
+                    </form>
+
+                    <form method="POST" action="/url/delete">
+                        <label>Enter url to delete from database</label>
+                        <input type="text" name="redirectUrl" required>
+                        <button type="submit">Delete</button>
+                    </form>
+                    <% if (locals.deletedUrl) { %>
+                        <p>deleted URL: <%= deletedUrl %>
+                        </p>
+                        <% } %>
+
+
+
+                            <!-- add table which includes all details in database -->
+
+
+
+
+</body>
+
+</html>
