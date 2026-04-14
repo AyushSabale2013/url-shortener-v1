@@ -1,8 +1,12 @@
 const express = require("express");
 const path = require("path"); // for views (in build pacake in node)
 const { connectionToMongoDB } = require("./connections.js");
+
+
 const urlRouter = require("./routers/url.js");
+const userRouter = require("./routers/user.js");
 const staticRouter = require("./routers/static.js");
+
 
 
 // Basic setups
@@ -22,8 +26,10 @@ app.set("views", path.resolve("./views")); //tells where is view
 
 // middlewares
 app.use(express.json());
-app.use(express.urlencoded({extended : true})); // for pasring url data
+app.use(express.urlencoded({ extended: true })); // for pasring url data
 app.use(express.static("public"));
+
+
 
 
 
@@ -31,6 +37,7 @@ app.use(express.static("public"));
 
 //routing
 app.use("/url", urlRouter);
+app.use("/user", userRouter);
 app.use("/", staticRouter)
 
 

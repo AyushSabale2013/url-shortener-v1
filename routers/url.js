@@ -10,8 +10,6 @@ urlRouter.route("/")
     .get(redirectShortIdfromUI);
 
 urlRouter.route("/delete")
-
-
     .post(deleteByUrl);
 
 

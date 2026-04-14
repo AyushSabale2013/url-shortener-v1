@@ -11,6 +11,12 @@
 <body>
     <div class="container">
         <h1>🔗 URL Shortener</h1>
+        <div class="card">
+            <h3>User Management</h3>
+            <button onclick="window.location.href='/user/signUp'">
+                Create User
+            </button>
+        </div>
 
         <!-- Generate -->
         <div class="card">
@@ -51,7 +57,7 @@
             <form method="POST" action="/url/delete">
                 <label>Enter URL to delete</label>
                 <input type="text" name="redirectUrl" placeholder="https://example.com" required>
-                <button type="submit">Delete</button>
+                <button type="submit">Remove</button>
             </form>
 
             <% if (locals.deletedUrl) { %>
