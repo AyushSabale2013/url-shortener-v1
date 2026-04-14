@@ -6,11 +6,18 @@ let urlRouter = express.Router();
 
 urlRouter.route("/")
     .post(generateShortId)
+    .get((req, res) => {
+        res.render("home");
 
-    .get(redirectShortIdfromUI);
+    })
+
+
 
 urlRouter.route("/delete")
     .post(deleteByUrl);
+urlRouter.route("/redirect")
+    .get(redirectShortIdfromUI);
+
 
 
 

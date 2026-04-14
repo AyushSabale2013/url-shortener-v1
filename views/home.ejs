@@ -11,12 +11,6 @@
 <body>
     <div class="container">
         <h1>🔗 URL Shortener</h1>
-        <div class="card">
-            <h3>User Management</h3>
-            <button onclick="window.location.href='/user/signUp'">
-                Create User
-            </button>
-        </div>
 
         <!-- Generate -->
         <div class="card">
@@ -45,7 +39,7 @@
 
         <!-- Redirect -->
         <div class="card">
-            <form method="GET" action="/url">
+            <form method="GET" action="/url/redirect">
                 <label>Enter short ID to redirect</label>
                 <input type="text" name="shortId" placeholder="abc123" required>
                 <button type="submit">Redirect</button>

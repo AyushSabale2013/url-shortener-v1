@@ -11,7 +11,7 @@ userRouter.route("/signUp")
         console.log("get Request hit on signUP");
         return res.render("signUp");
     })
-    .post(createUser).then(popup);
+    .post(createUser);
 
 
 module.exports = userRouter;

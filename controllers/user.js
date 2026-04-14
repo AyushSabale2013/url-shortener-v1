@@ -15,7 +15,7 @@ async function createUser(req, res) {
 
         console.log("User created:", newUser);
 
-        return res.render("home");
+        return res.render("index");
 
     } catch (err) {
         console.log("ERROR:", err);

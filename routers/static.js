@@ -7,7 +7,7 @@ let urlRouter = express.Router();
 
 urlRouter.route("/")
     .get(async (req, res) => {
-        res.render("home");
+        res.render("index");
 
     });
 urlRouter.route("/signUp")
