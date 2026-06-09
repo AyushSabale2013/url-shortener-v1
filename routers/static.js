@@ -10,10 +10,6 @@ urlRouter.route("/")
         res.render("index");
 
     });
-urlRouter.route("/signUp")
-    .get(async (req, res) => {
-        res.render("signUp");
 
-    });
 
 module.exports = urlRouter;
