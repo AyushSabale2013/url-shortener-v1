@@ -27,23 +27,26 @@ async function createUser(req, res) {
 async function loginUser(req, res) {
     try {
         console.log("Request hit on post of login");
-        const { userName, emailID, password } = req.body;
 
-        console.log(req.body); // debug
+        const { emailID, password } = req.body;
 
-        const newUser = await userModel.create({
-            userName,
-            emailID,
-            password
-        });
+        const user = await userModel.findOne({ emailID });
 
-        console.log("User created:", newUser);
+        if (!user) {
+            return res.send("User not found");
+        }
 
-        return res.render("index");
+        if (user.password !== password) {
+            return res.send("Invalid password");
+        }
+
+        console.log("Login successful:", user);
+
+        return res.render("home");
 
     } catch (err) {
         console.log("ERROR:", err);
-        return res.send("Error creating user");
+        return res.send("Error logging in");
     }
 }
 

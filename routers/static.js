@@ -1,15 +1,14 @@
 const express = require("express");
-
-let urlRouter = express.Router();
-
+let staticRouter = express.Router();
 
 
 
-urlRouter.route("/")
+
+staticRouter.route("/")
     .get(async (req, res) => {
         res.render("index");
 
     });
 
 
-module.exports = urlRouter;
+module.exports = staticRouter;

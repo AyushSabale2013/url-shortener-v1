@@ -27,7 +27,7 @@ app.set("views", path.resolve("./views")); //tells where is view
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // for pasring url data
-app.use(express.static("public"));
+app.use(express.static("public")); // Serve all files inside the public folder directly to the browser.
 
 
 
